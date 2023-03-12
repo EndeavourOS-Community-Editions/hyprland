@@ -1,7 +1,4 @@
-# hyprland
-
 # Welcome to EndeavourOS Hyprland
-
 
 * Developer RedBlizard
 * Developer waterbuffalo
