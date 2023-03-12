@@ -1,0 +1,2 @@
+#!/bin/sh
+yad --title="EndeavourOS Sway-WM keybindings:" --no-buttons --geometry=400x345-15-400 --list --column=key: --column=description: --column=command: "ESC" "close this app" "" "=" "modkey" "(set mod Mod4)" "+enter" "Terminal" "(kitty)" "+d" "Application Menu" "(rofi-drun)" "+r" "Activities" "(rofi-run)" "+shift+b" "" "Open Browser" "+shift+t" "" "Open Files" "+c" "close focused app" "(kill)" "[Shift]+Print-key" "screenshot" "(hyprshot)" "power-menu" "(wlogout)" "+x" "open keybinding helper" "full list"
