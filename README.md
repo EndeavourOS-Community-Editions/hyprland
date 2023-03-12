@@ -3,7 +3,7 @@
 * Developer RedBlizard
 * Developer waterbuffalo
 * Developer Kainoa Kanter
-* Developer joekamprad
+* Mentoring joekamprad
 
 https://github.com/hyprwm/Hyprland
 
