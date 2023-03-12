@@ -1,0 +1,181 @@
+//------Layout ------------------------------
+{
+       "layer": "top",
+       "position": "top",
+       "mod": "dock",
+       "exclusive": true,
+       "output": ["HDMI-A-1", "eDP-1",], // Which Monitor waybar opens on
+       "passtrough": false,
+       "gtk-layer-shell": true,
+       "height": -14,
+       "spacing": 0,
+       "margin-top": -2,
+       "margin-bottom":0,
+    
+  //--- Modules ------------------------------
+       "modules-left": ["clock", "custom/launcher", "wlr/workspaces", "cpu", "custom/cputemp", "temperature", "custom/memory",],
+       "modules-center": ["hyprland/window"],
+       "modules-right": ["tray", "custom/caffeine", "custom/updates", "network", "custom/language", "pulseaudio", "pulseaudio#microphone", "battery", "backlight", "custom/power",],
+       
+  "hyprland/window": {  // Module has to be here in the config otherwise it will not work correctly
+       "format": "{}",
+       "separate-outputs": true,
+       "max-length": 55,       
+ 
+  },
+  "clock": {
+       "format": "{: %R   %a, %b %d}",
+       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"          
+
+  },
+  "custom/launcher": {
+       "format": "<span color='#d8dee9'></span>",
+    // "on-click": "wofi --show drun --insensitive --allow-images"
+       "on-click": "rofi -show drun -theme ~/.config/rofi/global/rofi.rasi",
+                
+  },
+  "wlr/workspaces": {
+       "on-scroll-up": "hyprctl dispatch workspace e+1",
+       "on-scroll-down": "hyprctl dispatch workspace e-1",
+       "all-outputs": true,
+       "on-click": "activate",
+       "format": "{icon}",
+       "format-icons": {
+       "1": "",
+       "2": "",
+       "3": "",
+       "4": "",
+       "5": "",
+       "6": "",
+       "7": "",
+       "8": "",
+       "9": ""
+       }		           
+            
+  },
+  "cpu": {
+       "interval": 1,
+       "format": "  CPU {}%",
+       "max-length": 15,
+       "on-click": "~/.config/waybar/scripts/cpu.sh --popup",   
+  },
+  "custom/cputemp":{
+       "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+       "interval": 1,
+       "on-click": "~/.config/waybar/scripts/btop.sh",            
+  },      
+  "custom/memory":{  
+       "exec": "~/.config/waybar/scripts/free-mem.sh",
+       "interval": 1,
+       "on-click": "~/.config/waybar/scripts/htop.sh",
+           
+  },
+  "tray": {
+       "icon-size": 13,
+       "spacing": 10,
+       "tooltip": false,
+    
+  },
+  "custom/test":{
+       "on-click": "~/.config/waybar/scripts/screenshot-region.sh", // still testing this custom screenshot module
+       "on-click-right": "exec,hyprshot --mode window -o $HOME/Pictures/Screenshots/$(date +'%s.png')",
+       "format": "{}"         
+    
+  },
+  "custom/caffeine": {      
+      "exec": "~/.config/waybar/scripts/caffeine.sh",
+      "return-type": "json",
+      "interval": 3,
+      "format-icons": ["﯈", ""],
+      "format": "{icon}"    
+    
+  },
+  "custom/updates": {
+      "exec": "(checkupdates ; paru -Qua) | wc -l",
+      "interval": 900,
+      "format": " {}",
+      "on-click": "~/.config/waybar/scripts/updates.sh",
+        
+  },
+  "network": {
+      "format-wifi": "直 {essid}",
+      "format-ethernet": " ETH",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": " Disconnected",
+      "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",       
+      "on-click": "~/.config/waybar/scripts/networkmanager.sh",
+    
+  },
+  "custom/language": {
+      "exec": "cat /tmp/kb_layout",
+      "interval": 3,
+      "format": " {}",
+      "on-click": "~/.config/waybar/scripts/keyhint.sh",    
+
+  },    
+  "custom/pipewire": {
+      "tooltip": false,
+      "max-length": 6,       
+      "exec": "$HOME/.config/waybar/scripts/pipewire.sh", // script cause higher cpuload and higher cpu-temp
+      "on-click": "pavucontrol",
+      "on-click-right": "kitty --class update -T update -e pulsemixer",
+    
+  },
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "ﱝ Muted",
+      "on-click": "~/.config/hypr/scripts/volume_ctl.sh mute",
+      "on-click-right": "kitty --class update -T update -e pulsemixer",
+      "scroll-step": 1,
+      "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "墳", ""]
+      }   
+          
+  },
+  "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "tooltip": true,
+      "format-source": " {volume}%",
+      "format-source-muted": " Muted",
+      "on-click": "pamixer --default-source -t",
+      "on-scroll-up": "pamixer --default-source -i 5",
+      "on-scroll-down": "pamixer --default-source -d 5",
+      "scroll-step": 5
+    
+  },
+  "battery": {
+      "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+  },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["", "", "", "", ""],
+      "tooltip": false,    
+    
+  },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": ["", "", ""],
+      "on-scroll-up": "brightnessctl set 1%+",
+      "on-scroll-down": "brightnessctl set 1%-",
+      "tooltip": false,
+      "min-length": 6    
+        
+  },    
+  "custom/power": {
+      "format": "<span font='13' rise='1000'>襤</span>",
+      "tooltip": false,
+      "on-click": "~/.config/hypr/scripts/logout.sh",
+      }
+}
