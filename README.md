@@ -8,3 +8,5 @@
 https://github.com/hyprwm/Hyprland
 
 https://hyprland.org/
+
+## This repo is still work in progress, its still not official  released and under initial development.
