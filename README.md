@@ -2,6 +2,8 @@
 
 * Developer RedBlizard
 * Developer rudy-in
+* Developer bananabr34d
+* Developer Kainoa Kanter
 * Mentoring joekamprad
 
 https://github.com/hyprwm/Hyprland
