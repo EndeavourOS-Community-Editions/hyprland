@@ -1,7 +1,7 @@
 # Welcome to EndeavourOS Hyprland
 
-* Developer RedBlizard
-* Developer rudy-in
+* Maintainer RedBlizard
+* Maintainer rudy-in
 * Developer bananabr34d
 * Developer Kainoa Kanter
 * Mentoring joekamprad
