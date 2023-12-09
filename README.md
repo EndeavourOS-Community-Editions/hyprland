@@ -1,9 +1,12 @@
 # Welcome to EndeavourOS Hyprland
-
+Current Development:
 * Maintainer RedBlizard
 * Maintainer rudy-in
-* Developer bananabr34d
-* Developer Kainoa Kanter
+involved before but not active currently:
+~~* Developer bananabr34d~~
+~~* Developer Kainoa Kanter~~
+
+--
 * Mentoring joekamprad
 
 https://github.com/hyprwm/Hyprland
