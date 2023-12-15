@@ -1,5 +1,5 @@
 # Welcome to EndeavourOS Hyprland
-Current Development:
+Current Developers:
 * Maintainer RedBlizard
 * Maintainer rudy-in
 
