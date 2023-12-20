@@ -4,6 +4,7 @@ Current Developers:
 * Maintainer rudy-in
 * Developer OgloTheNerd
 * Developer qt (this would change time to time since this guy doesn't have a permanent name)
+* Mentoring joekamprad
 <hr>
 involved before but not active currently:
 
@@ -11,8 +12,7 @@ involved before but not active currently:
 
 ~~* Developer Kainoa Kanter~~
 
---
-* Mentoring joekamprad
+<hr>
 
 https://github.com/hyprwm/Hyprland
 
