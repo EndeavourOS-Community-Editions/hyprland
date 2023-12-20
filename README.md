@@ -2,7 +2,8 @@
 Current Developers:
 * Maintainer RedBlizard
 * Maintainer rudy-in
-
+* Developer OgloTheNerd
+* Developer qt (this would change time to time since this guy doesn't have a permanent name)
 involved before but not active currently:
 
 ~~* Developer bananabr34d~~
